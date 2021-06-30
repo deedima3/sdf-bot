@@ -29,9 +29,9 @@ app = Flask(__name__)
 YOUR_CHANNEL_ACCESS_TOKEN = os.environ["YOUR_CHANNEL_ACCESS_TOKEN"]
 YOUR_CHANNEL_SECRET = os.environ["YOUR_CHANNEL_SECRET"]
 
-GWK_TEXT = "adalah sebuah taman wisata budaya di bagian selatan pulau Bali."
+GWK_TEXT = "adalah sebuah taman wisata budaya di selatan pulau Bali"
 MARGARANA_TEXT = "adalah sebuah Monumen untuk mengenang Puputan Margarana"
-SANUR_TEXT = "Pantai Sanur adalah salah satu pantai wisata yang terkenal di pulau Bali."
+SANUR_TEXT = "adalah salah satu pantai wisata yang terkenal di pulau Bali"
 BAJRA_TEXT = "adalah monumen perjuangan rakyat Bali yang terletak di Renon"
 
 
