@@ -75,7 +75,7 @@ def handle_message(event):
     # Submenu
     elif 'landmark bali' in msg:
         carousel_template = CarouselTemplate(columns=[
-            CarouselColumn(text='hoge1', title='fuga1', thumbnailImageUrl="https://upload.wikimedia.org/wikipedia/id/0/0a/Patung_Wisnu_di_GWK.jpeg", actions=[
+            CarouselColumn(text='hoge1', title='fuga1', thumbnail_image_url="https://www.rentalmobilbali.net/wp-content/uploads/2020/03/Tempat-Wisata-Di-Bali-GWK.jpg", actions=[
                 URIAction(label='Go to line.me', uri='https://line.me'),
                 PostbackAction(label='ping', data='ping')
             ]),
