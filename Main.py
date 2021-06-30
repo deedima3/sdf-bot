@@ -41,16 +41,13 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    line_bot_api.reply_message(
-        event.reply_token,
-        ImageSendMessage(
-            original_content_url='https://www.google.com/search?hl=jp&q=' +
-            event.message.text + '&btnG=Google+Search&tbs=0&safe=off&tbm=isch',
-            preview_image_url='https://www.google.com/search?hl=jp&q=' +
-            event.message.text + '&btnG=Google+Search&tbs=0&safe=off&tbm=isch'
-        )
-    )
+    
+    msg = (event.message.text).lower()
 
+    if 'SDF' in msg:
+        line_bot_api.reply_message(
+            event.reply.token, TextSendMessage(text="PlaceHolder menu SDF")
+        )
 
 if __name__ == "__main__":
     #    app.run()
