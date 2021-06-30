@@ -41,12 +41,12 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    
-    msg = (event.message.text).lower()
+    msg = event.message.text.lower()
 
-    if 'SDF' in msg:
+    if 'hello' in msg:
         line_bot_api.reply_message(
-            event.reply.token, TextSendMessage(text="PlaceHolder menu SDF")
+            event.reply_token,
+            TextSendMessage(text="Placeholder Hello")
         )
 
 if __name__ == "__main__":
