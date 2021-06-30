@@ -55,6 +55,7 @@ def callback():
 def handle_message(event):
     msg = (event.message.text).lower()
 
+    # 3 Main menu, used in rich menu
     if 'sdf' in msg:
         line_bot_api.reply_message(
             event.reply_token,
@@ -70,6 +71,8 @@ def handle_message(event):
             event.reply_token,
             TextSendMessage(text="Games")
         )
+    
+    # Submenu
     elif 'carousel' in msg:
         carousel_template = CarouselTemplate(columns=[
             CarouselColumn(text='hoge1', title='fuga1', actions=[
@@ -84,6 +87,19 @@ def handle_message(event):
         ])
         template_message = TemplateSendMessage(
             alt_text='Carousel alt text', template=carousel_template)
+        line_bot_api.reply_message(event.reply_token, template_message)
+
+    elif 'landmark bali' in msg:
+        image_carousel_template = ImageCarouselTemplate(columns=[
+            ImageCarouselColumn(
+                text='Taman Budaya Garuda Wisnu Kencana (bahasa Inggris: Garuda Wisnu Kencana Cultural Park), atau kerap disebut dengan GWK, adalah sebuah taman wisata budaya di bagian selatan pulau Bali. Taman wisata ini terletak di Desa Ungasan, Kecamatan Kuta Selatan, Kabupaten Badung, kira-kira 40 kilometer di sebelah selatan Denpasar, ibu kota provinsi Bali.Di sini berdiri megah sebuah landmark atau maskot Bali, yakni patung Garuda Wisnu Kencana yang menggambarkan sosok Dewa Wisnu menunggangi tunggangannya, Garuda, setinggi 121 meter.', title='Garuda Wisnu Kencana', image_url='https://www.rentalmobilbali.net/wp-content/uploads/2020/03/Tempat-Wisata-Di-Bali-GWK.jpg'),
+            ImageCarouselColumn(image_url='https://via.placeholder.com/1024x1024',
+                                action=DatetimePickerAction(label='date',
+                                                            data='date_postback',
+                                                            mode='date'))
+        ])
+        template_message = TemplateSendMessage(
+            alt_text='ImageCarousel alt text', template=image_carousel_template)
         line_bot_api.reply_message(event.reply_token, template_message)
         
 if __name__ == "__main__":
