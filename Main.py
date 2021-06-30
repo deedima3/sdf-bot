@@ -13,7 +13,6 @@ import os
 
 app = Flask(__name__)
 
-#環境変数取得
 YOUR_CHANNEL_ACCESS_TOKEN = os.environ["YOUR_CHANNEL_ACCESS_TOKEN"]
 YOUR_CHANNEL_SECRET = os.environ["YOUR_CHANNEL_SECRET"]
 
@@ -43,12 +42,21 @@ def callback():
 def handle_message(event):
     msg = event.message.text.lower()
 
-    if 'hello' in msg:
+    if 'SDF' in msg:
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text="Placeholder Hello")
+            TextSendMessage(text="SDF")
         )
-
+    elif 'UNUD' in msg:
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text="Unud")
+        )
+    elif 'GAMES' in msg:
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text="Games")
+        )
 if __name__ == "__main__":
     #    app.run()
     port = int(os.getenv("PORT", 5000))
