@@ -42,17 +42,17 @@ def callback():
 def handle_message(event):
     msg = (event.message.text).lower()
 
-    if 'SDF' in msg:
+    if 'sdf' in msg:
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text="SDF")
         )
-    elif 'UNUD' in msg:
+    elif 'unud' in msg:
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text="Unud")
         )
-    elif 'GAMES' in msg:
+    elif 'games' in msg:
         line_bot_api.reply_message(
             event.reply_token,
             TextSendMessage(text="Games")
