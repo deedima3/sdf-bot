@@ -74,12 +74,12 @@ def handle_message(event):
     
     # Submenu
     elif 'landmark bali' in msg:
-        carousel_template = CarouselTemplate(columns=[
-            CarouselColumn(text='hoge1', title='fuga1', thumbnail_image_url="https://www.rentalmobilbali.net/wp-content/uploads/2020/03/Tempat-Wisata-Di-Bali-GWK.jpg", actions=[
+        carousel_template = CarouselTemplate(thumbnail_image_url="https://www.rentalmobilbali.net/wp-content/uploads/2020/03/Tempat-Wisata-Di-Bali-GWK.jpg"columns=[
+            CarouselColumn(text='hoge1', title='fuga1', , actions=[
                 URIAction(label='Go to line.me', uri='https://line.me'),
                 PostbackAction(label='ping', data='ping')
             ]),
-            CarouselColumn(text='hoge2', title='fuga2', actions=[
+            CarouselColumn(text='hoge2', title='fuga2', thumbnail_image_url="https://www.rentalmobilbali.net/wp-content/uploads/2020/03/Tempat-Wisata-Di-Bali-GWK.jpg", actions=[
                 PostbackAction(label='ping with text',
                                data='ping', text='ping'),
                 MessageAction(label='Translate Rice', text='米')
