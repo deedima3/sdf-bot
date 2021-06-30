@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 from __future__ import unicode_literals
 
 import datetime
@@ -9,6 +10,8 @@ import sys
 import tempfile
 from argparse import ArgumentParser
 
+=======
+>>>>>>> parent of 8939ad1 (ay)
 from flask import Flask, request, abort, send_from_directory
 from werkzeug.middleware.proxy_fix import ProxyFix
 =======
@@ -38,11 +41,15 @@ from linebot.models import (
     TextComponent, IconComponent, ButtonComponent,
     SeparatorComponent, QuickReply, QuickReplyButton,
     ImageSendMessage)
+<<<<<<< HEAD
 =======
     MessageEvent, TextMessage, TextSendMessage, ImageSendMessage,
 )
 import os
 >>>>>>> parent of 3cd87ed (Update Main.py)
+=======
+import os
+>>>>>>> parent of 8939ad1 (ay)
 
 app = Flask(__name__)
 
