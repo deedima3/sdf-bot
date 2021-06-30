@@ -69,7 +69,7 @@ def handle_message(event):
             event.reply_token,
             TextSendMessage(text="Games")
         )
-    elif text == 'carousel':
+    elif 'carousel' in msg:
         carousel_template = CarouselTemplate(columns=[
             CarouselColumn(text='hoge1', title='fuga1', actions=[
                 URIAction(label='Go to line.me', uri='https://line.me'),
@@ -84,6 +84,7 @@ def handle_message(event):
         template_message = TemplateSendMessage(
             alt_text='Carousel alt text', template=carousel_template)
         line_bot_api.reply_message(event.reply_token, template_message)
+        
 if __name__ == "__main__":
     #    app.run()
     port = int(os.getenv("PORT", 5000))
