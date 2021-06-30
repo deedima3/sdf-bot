@@ -29,10 +29,10 @@ app = Flask(__name__)
 YOUR_CHANNEL_ACCESS_TOKEN = os.environ["YOUR_CHANNEL_ACCESS_TOKEN"]
 YOUR_CHANNEL_SECRET = os.environ["YOUR_CHANNEL_SECRET"]
 
-GWK_TEXT = "Taman Budaya Garuda Wisnu Kencana, atau kerap disebut dengan GWK, adalah sebuah taman wisata budaya di bagian selatan pulau Bali. Taman wisata ini terletak di Desa Ungasan, Kecamatan Kuta Selatan, Kabupaten Badung, kira-kira 40 kilometer di sebelah selatan Denpasar, ibu kota provinsi Bali.Di sini berdiri megah sebuah landmark atau maskot Bali, yakni patung Garuda Wisnu Kencana yang menggambarkan sosok Dewa Wisnu menunggangi tunggangannya, Garuda, setinggi 121 meter."
-MARGARANA_TEXT = "Monumen Nasional Taman Pujaan Bangsa Margarana adalah sebuah Monumen peringatan yang didirikan untuk mengenang tragedi Puputan Margarana, di Desa Marga, Kecamatan Marga, Kabupaten Tabanan, Bali. Pada Tanggal 20 November 1946 terjadilah pertempuran habis-habisan antara pasukan pejuang Republik Indonesia melawan kaum penjajah Belanda,di Banjar Kelaci, Desa Marga oleh pasukan Ciung Wanara di bawah pimpinan Kolonel I Gusti Ngurah Rai. "
-SANUR_TEXT = "Pantai Sanur adalah salah satu pantai wisata yang terkenal di pulau Bali. Tempat ini letaknya adalah persis di sebelah timur kota Denpasar, ibu kota Bali. Sanur berada di Kotamadya Denpasar."
-BAJRA_TEXT = "Monumen Bajra Sandhi atau disebut juga Monumen Perjuangan Rakyat Bali adalah monumen perjuangan rakyat Bali yang terletak di Renon, Kota Denpasar, Bali. Monumen ini menempati areal yang sangat luas, ada beberapa lapangan bola di sekelilingnya. "
+GWK_TEXT = "adalah sebuah taman wisata budaya di bagian selatan pulau Bali."
+MARGARANA_TEXT = "adalah sebuah Monumen untuk mengenang Puputan Margarana"
+SANUR_TEXT = "Pantai Sanur adalah salah satu pantai wisata yang terkenal di pulau Bali."
+BAJRA_TEXT = "adalah monumen perjuangan rakyat Bali yang terletak di Renon"
 
 
 line_bot_api = LineBotApi(YOUR_CHANNEL_ACCESS_TOKEN)
