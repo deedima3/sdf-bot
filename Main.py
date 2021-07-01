@@ -263,7 +263,7 @@ def handle_message(event):
             event.reply_token,
             message
         )
-    elif 'nyaa' in msg:
+    elif 'nyaaa' in msg:
         text = TextSendMessage(text="Nyaa~")
         image_message = ImageSendMessage(
             original_content_url='https://1.bp.blogspot.com/-A_gFX5Dh04s/V6OwMNgsW0I/AAAAAAAAizQ/h0iPEF9qrdIwlNToRXp0DT8IAhKyfoQTACPcB/s1600/Omake%2BGif%2BAnime%2B-%2BNew%2BGame%2521%2B-%2BEpisode%2B5%2B-%2BHajime%2BNyaa%2BTee%2BHee.gif',
