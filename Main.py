@@ -40,6 +40,47 @@ RAKA_SUDEWI_TEXT = "Menurut rektor perempuan pertama di pendidikan ini, hal ters
 line_bot_api = LineBotApi(YOUR_CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(YOUR_CHANNEL_SECRET)
 
+#Utitlitiy Function
+
+def createBubble(title, imageURL, text, actionURL):
+    bubble = BubbleContainer(
+        direction='ltr',
+        header=BoxComponent(
+            layout="vertical",
+            contents=[
+                TextComponent(text=title, weight='bold',
+                              size='xl', align="center", color="#291749")
+            ]
+        ),
+        hero=ImageComponent(
+            url=imageURL,
+            size='full',
+            aspect_ratio='20:13',
+            aspect_mode='cover'
+        ),
+        body=BoxComponent(
+            layout='vertical',
+            contents=[
+                # info
+                TextComponent(text=text, size='sm',
+                              align="start", color="#000000", wrap=True)
+            ]),
+        footer=BoxComponent(
+            layout='vertical',
+            spacing='sm',
+            contents=[
+                    # callAction
+                    ButtonComponent(
+                        style='primary',
+                        height='sm',
+                        action=URIAction(label='Selengkapnya',
+                                         uri=actionURL),
+                        color="#291749"
+                    )]
+        )
+    )
+    return bubble
+
 
 @app.route("/callback", methods=['POST'])
 def callback():
@@ -105,42 +146,24 @@ def handle_message(event):
         line_bot_api.reply_message(event.reply_token, template_message)
         
     elif 'jajaran pimpinan' in msg:
-        bubble = BubbleContainer(
-            direction='ltr',
-            header=BoxComponent(
-                layout="vertical",
-                contents=[
-                TextComponent(text='Rektor Udayana', weight='bold',
-                              size='xl', align="center", color="#291749")
-                ]
-            ),
-            hero=ImageComponent(
-                url='https://womensobsession.com/uploads/post_article/20190625232230-28960.jpg',
-                size='full',
-                aspect_ratio='20:13',
-                aspect_mode='cover'
-            ),
-            body=BoxComponent(
-                layout='vertical',
-                contents=[
-                    # info
-                    TextComponent(text=RAKA_SUDEWI_TEXT, size='sm', align="start", color="#000000", wrap=True)
-                ]),
-            footer=BoxComponent(
-                layout='vertical',
-                spacing='sm',
-                contents=[
-                    # callAction
-                    ButtonComponent(
-                        style='primary',
-                        height='sm',
-                        action=URIAction(label='Selengkapnya', 
-                        uri='https://www.womensobsession.com/detail/12/prof-dr-dr-aa-raka-sudewi-sps-k-unggul-mandiri-berbudaya'),
-                        color="#291749"
-                    )]
-            )
+        bubble1 = createBubble(
+            "Rektor Udayana", 
+            "https://womensobsession.com/uploads/post_article/20190625232230-28960.jpg",
+            RAKA_SUDEWI_TEXT,
+            "https://www.womensobsession.com/detail/12/prof-dr-dr-aa-raka-sudewi-sps-k-unggul-mandiri-berbudaya")
+        bubble2 = createBubble(
+            "Predator UNUD",
+            "https://pbs.twimg.com/profile_images/879285590834925568/nv9P5Li9.jpg",
+            "Hati-hati ya anaknya jauhin dari orang ini",
+            "https://twitter.com/dwikurmha"
         )
-        container = CarouselContainer(contents=[bubble])
+        bubble3 = createBubble(
+            "Creator",
+            "https://scontent.fdps2-1.fna.fbcdn.net/v/t1.6435-9/123305666_3551265074965550_651878868087206200_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=09cbfe&_nc_eui2=AeF8P0gAOFcUumleXLm2IljNFfxW36CBDQ4V_FbfoIENDt06QVGvjQuLG4gwmjyyOOxDloT6Uz2XUntSWNXeHhRy&_nc_ohc=ZiyN-XPY4UUAX9C2AOW&_nc_ht=scontent.fdps2-1.fna&oh=0e8dcaffed240ab885a24a8686371cde&oe=60E2C39A",
+            "Haloo",
+            "https://www.facebook.com/deedima03"
+        )
+        container = CarouselContainer(contents=[bubble1, bubble2, bubble3])
         message = FlexSendMessage(alt_text="Jajaran Pimpinan", contents=container)
         line_bot_api.reply_message(
             event.reply_token,
@@ -152,7 +175,8 @@ def handle_message(event):
             preview_image_url='http://i5.wikimapia.org/?x=13433&y=8593&zoom=14&type=map&lng=0'
         )
         line_bot_api.reply_message(event.reply_token, image_message)
-        
+
+
 if __name__ == "__main__":
     #    app.run()
     port = int(os.getenv("PORT", 5000))
