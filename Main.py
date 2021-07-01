@@ -163,24 +163,32 @@ def handle_message(event):
             "Dekan FMIPA", 
             "https://simdos.unud.ac.id/uploads/file_foto_dir/b68c3163efaef4e08ac00b8a3e0e3b8ae1cf5cdb.jpg",
             WATINIASIH_TEXT,
-            "https://udayananetworking.unud.ac.id/lecturer/2302-ni-luh-watiniasih")
+            "https://udayananetworking.unud.ac.id/lecturer/2302-ni-luh-watiniasih",
+            "xl",
+            "3:4")
         bubble2 = createBubble(
             "Wakil Dekan I Bidang Akademik dan Perencanaan",
             "https://simdos.unud.ac.id/uploads/file_foto_dir/c846fc105e2f2f845a4015fc8edeaa90fd0088db.jpg",
             GANDHIADI_TEXT,
             "https://udayananetworking.unud.ac.id/lecturer/2268-gk-gandhiadi"
+            "l",
+            "3:4"
         )
         bubble3 = createBubble(
             "Wakil Dekan II Bidang Umum dan Keuangan",
             "https://simdos.unud.ac.id/uploads/file_foto_dir/7b479289d3cc1ab53944113d03763d70.jpg",
             SUKADANA_TEXT,
             "https://udayananetworking.unud.ac.id/lecturer/2326-i-made-sukadana"
+            "l",
+            "3:4"
         )
         bubble4 = createBubble(
             "Wakil Dekan III Bidang Kemahasiswaan dan Informasi",
             "https://udayananetworking.unud.ac.id/protected/storage/foto_biografi/foto%203x4.jpg",
             GUNAWAN_TEXT,
             "https://udayananetworking.unud.ac.id/professor/credential/2298-i-wayan-gede-gunawan"
+            "l",
+            "3:4"
         )
         container = CarouselContainer(contents=[bubble1, bubble2, bubble3, bubble4])
         message = FlexSendMessage(alt_text="Jajaran Pimpinan", contents=container)
