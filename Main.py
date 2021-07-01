@@ -22,7 +22,7 @@ from linebot.models import (
     FlexSendMessage, BubbleContainer, ImageComponent, BoxComponent,
     TextComponent, IconComponent, ButtonComponent,
     SeparatorComponent, QuickReply, QuickReplyButton,
-    ImageSendMessage)
+    ImageSendMessage, CarouselContainer)
 
 app = Flask(__name__)
 
@@ -33,6 +33,8 @@ GWK_TEXT = "adalah sebuah taman wisata budaya di selatan pulau Bali"
 MARGARANA_TEXT = "adalah sebuah Monumen untuk mengenang Puputan Margarana"
 SANUR_TEXT = "adalah salah satu pantai wisata yang terkenal di pulau Bali"
 BAJRA_TEXT = "adalah monumen perjuangan rakyat Bali yang terletak di Renon"
+
+RAKA_SUDEWI_TEXT = "Menurut rektor perempuan pertama di pendidikan ini, hal tersebut harus dapat memacu untuk menuju World Class University. Kini, universitas telah bekerja sama dengan berbagai lembaga perguruan tinggi internasional, baik dalam bidang pendidikan, penelitian, dan pengabdian masyarakat."
 
 
 line_bot_api = LineBotApi(YOUR_CHANNEL_ACCESS_TOKEN)
@@ -105,109 +107,35 @@ def handle_message(event):
     elif 'jajaran pimpinan' in msg:
         bubble = BubbleContainer(
             direction='ltr',
-            header=TextComponent(text='Rektor Udayana', weight='bold', size='xl', align="center", color=""),
+            header=TextComponent(text='Rektor Udayana', weight='bold', size='xxl', align="center", color="#291749"),
             hero=ImageComponent(
-                url='https://example.com/cafe.jpg',
+                url='https://womensobsession.com/uploads/post_article/20190625232230-28960.jpg',
                 size='full',
                 aspect_ratio='20:13',
-                aspect_mode='cover',
-                action=URIAction(uri='http://example.com', label='label')
+                aspect_mode='cover'
             ),
             body=BoxComponent(
                 layout='vertical',
                 contents=[
-                    # title
-                    TextComponent(text='Brown Cafe', weight='bold', size='xl'),
-                    # review
-                    BoxComponent(
-                        layout='baseline',
-                        margin='md',
-                        contents=[
-                            IconComponent(
-                                size='sm', url='https://example.com/gold_star.png'),
-                            IconComponent(
-                                size='sm', url='https://example.com/grey_star.png'),
-                            IconComponent(
-                                size='sm', url='https://example.com/gold_star.png'),
-                            IconComponent(
-                                size='sm', url='https://example.com/gold_star.png'),
-                            IconComponent(
-                                size='sm', url='https://example.com/grey_star.png'),
-                            TextComponent(text='4.0', size='sm', color='#999999', margin='md',
-                                          flex=0)
-                        ]
-                    ),
                     # info
-                    BoxComponent(
-                        layout='vertical',
-                        margin='lg',
-                        spacing='sm',
-                        contents=[
-                            BoxComponent(
-                                layout='baseline',
-                                spacing='sm',
-                                contents=[
-                                    TextComponent(
-                                        text='Place',
-                                        color='#aaaaaa',
-                                        size='sm',
-                                        flex=1
-                                    ),
-                                    TextComponent(
-                                        text='Shinjuku, Tokyo',
-                                        wrap=True,
-                                        color='#666666',
-                                        size='sm',
-                                        flex=5
-                                    )
-                                ],
-                            ),
-                            BoxComponent(
-                                layout='baseline',
-                                spacing='sm',
-                                contents=[
-                                    TextComponent(
-                                        text='Time',
-                                        color='#aaaaaa',
-                                        size='sm',
-                                        flex=1
-                                    ),
-                                    TextComponent(
-                                        text="10:00 - 23:00",
-                                        wrap=True,
-                                        color='#666666',
-                                        size='sm',
-                                        flex=5,
-                                    ),
-                                ],
-                            ),
-                        ],
-                    )
-                ],
-            ),
+                    TextComponent(text=RAKA_SUDEWI_TEXT, weight='bold', size='md', align="start", color="#000000")
+                ]),
             footer=BoxComponent(
                 layout='vertical',
                 spacing='sm',
                 contents=[
                     # callAction
                     ButtonComponent(
-                        style='link',
+                        style='primary',
                         height='sm',
-                        action=URIAction(label='CALL', uri='tel:000000'),
-                    ),
-                    # separator
-                    SeparatorComponent(),
-                    # websiteAction
-                    ButtonComponent(
-                        style='link',
-                        height='sm',
-                        action=URIAction(
-                            label='WEBSITE', uri="https://example.com")
-                    )
-                ]
-            ),
+                        action=URIAction(label='Selengkapnya', 
+                        uri='https://www.womensobsession.com/detail/12/prof-dr-dr-aa-raka-sudewi-sps-k-unggul-mandiri-berbudaya'),
+                        color="#291749"
+                    )]
+            )
         )
-        message = FlexSendMessage(alt_text="hello", contents=bubble)
+        container = CarouselContainer(contents=[bubble])
+        message = FlexSendMessage(alt_text="Jajaran Pimpinan", contents=container)
         line_bot_api.reply_message(
             event.reply_token,
             message
