@@ -174,29 +174,29 @@ def handle_message(event):
             False
         )
         bubble2 = createBubble(
-            "Wakil Dekan I\n Bidang Akademik dan Perencanaan",
+            "Wakil Dekan I,
             "https://simdos.unud.ac.id/uploads/file_foto_dir/c846fc105e2f2f845a4015fc8edeaa90fd0088db.jpg",
             GANDHIADI_TEXT,
             "https://udayananetworking.unud.ac.id/lecturer/2268-gk-gandhiadi",
-            "md",
+            "lg",
             "4:5",
             False
         )
         bubble3 = createBubble(
-            "Wakil Dekan II\n Bidang Umum dan Keuangan",
+            "Wakil Dekan II",
             "https://simdos.unud.ac.id/uploads/file_foto_dir/7b479289d3cc1ab53944113d03763d70.jpg",
             SUKADANA_TEXT,
             "https://udayananetworking.unud.ac.id/lecturer/2326-i-made-sukadana",
-            "md",
+            "lg",
             "4:5",
             False
         )
         bubble4 = createBubble(
-            "Wakil Dekan III\n Bidang Kemahasiswaan dan Informasi",
+            "Wakil Dekan III",
             "https://udayananetworking.unud.ac.id/protected/storage/foto_biografi/foto%203x4.jpg",
             GUNAWAN_TEXT,
             "https://udayananetworking.unud.ac.id/professor/credential/2298-i-wayan-gede-gunawan",
-            "md",
+            "lg",
             "4:5",
             False
         )
@@ -228,32 +228,32 @@ def handle_message(event):
 
     elif 'akreditasi mipa' in msg:
         bubble1 = createBubble(
-            "Fakultas Fisika", 
+            "Prodi Fisika", 
             "https://pbs.twimg.com/profile_images/378800000108493477/15e18cf46738f7e061951d832d2771fb_400x400.jpeg",
             AKREDITASI_FIS,
             "https://www.unud.ac.id/in/prodi82-Fisika.html")
         bubble2 = createBubble(
-            "Fakultas Kimia", 
+            "Prodi Kimia", 
             "https://pbs.twimg.com/profile_images/1218403600897998848/LrMOBFNC_400x400.jpg",
             AKREDITASI_KIM,
             "https://www.unud.ac.id/in/prodi47-Kimia.html")
         bubble3 = createBubble(
-            "Fakultas Biologi", 
+            "Prodi Biologi", 
             "https://pbs.twimg.com/profile_images/1090447974025486336/RdQazE4S_400x400.jpg",
             AKREDITASI_BIO,
             "https://www.unud.ac.id/in/prodi77-Biologi.html")
         bubble4 = createBubble(
-            "Fakultas Matematika", 
+            "Prodi Matematika", 
             "https://pbs.twimg.com/profile_images/598791010345357313/DTg7nXkL.jpg",
             AKREDITASI_MAT,
             "https://www.unud.ac.id/in/prodi81-Matematika.html")
         bubble5 = createBubble(
-            "Fakultas Farmasi", 
+            "Prodi Farmasi", 
             "https://pbs.twimg.com/profile_images/344513261572834650/c1d8d52b7589005ee3a9549f55815cb4.jpeg",
             AKREDITASI_FARMA,
             "https://www.unud.ac.id/in/prodi79-Farmasi.html")
         bubble6 = createBubble(
-            "Fakultas Informatika", 
+            "Prodi Informatika", 
             "https://pbs.twimg.com/profile_images/3661069144/e1f2a6dd7129b5dd2d46584743f29d02_400x400.jpeg",
             AKREDITASI_KOM,
             "https://www.unud.ac.id/in/prodi80-Ilmu%20Komputer-Teknik%20Informatika.html")
