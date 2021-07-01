@@ -170,7 +170,7 @@ def handle_message(event):
             WATINIASIH_TEXT,
             "https://udayananetworking.unud.ac.id/lecturer/2302-ni-luh-watiniasih",
             "xl",
-            "9:10",
+            "4:5",
             False
         )
         bubble2 = createBubble(
@@ -179,7 +179,7 @@ def handle_message(event):
             GANDHIADI_TEXT,
             "https://udayananetworking.unud.ac.id/lecturer/2268-gk-gandhiadi",
             "md",
-            "9:16",
+            "4:5",
             False
         )
         bubble3 = createBubble(
@@ -188,7 +188,7 @@ def handle_message(event):
             SUKADANA_TEXT,
             "https://udayananetworking.unud.ac.id/lecturer/2326-i-made-sukadana",
             "md",
-            "9:16",
+            "4:5",
             False
         )
         bubble4 = createBubble(
@@ -197,7 +197,7 @@ def handle_message(event):
             GUNAWAN_TEXT,
             "https://udayananetworking.unud.ac.id/professor/credential/2298-i-wayan-gede-gunawan",
             "md",
-            "9:16",
+            "4:5",
             False
         )
         container = CarouselContainer(contents=[bubble1, bubble2, bubble3, bubble4])
