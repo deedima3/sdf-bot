@@ -107,7 +107,13 @@ def handle_message(event):
     elif 'jajaran pimpinan' in msg:
         bubble = BubbleContainer(
             direction='ltr',
-            header=TextComponent(text='Rektor Udayana', weight='bold', size='xl', align="center", color="#291749"),
+            header=BoxComponent(
+                layout="vertical",
+                contents=[
+                TextComponent(text='Rektor Udayana', weight='bold',
+                              size='xl', align="center", color="#291749")
+                ]
+            ),
             hero=ImageComponent(
                 url='https://womensobsession.com/uploads/post_article/20190625232230-28960.jpg',
                 size='full',
@@ -118,7 +124,7 @@ def handle_message(event):
                 layout='vertical',
                 contents=[
                     # info
-                    TextComponent(text=RAKA_SUDEWI_TEXT, size='md', align="start", color="#000000")
+                    TextComponent(text=RAKA_SUDEWI_TEXT, size='md', align="start", color="#000000", wrap=True)
                 ]),
             footer=BoxComponent(
                 layout='vertical',
