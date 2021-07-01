@@ -54,20 +54,21 @@ handler = WebhookHandler(YOUR_CHANNEL_SECRET)
 
 #Utitlitiy Function
 
-def createBubble(title, imageURL, text, actionURL):
+
+def createBubble(title, imageURL, text, actionURL, titleSize="xl", imageAspectRatio="20:13"):
     bubble = BubbleContainer(
         direction='ltr',
         header=BoxComponent(
             layout="vertical",
             contents=[
                 TextComponent(text=title, weight='bold',
-                              size='xl', align="center", color="#291749")
+                              size=titleSize, align="center", color="#291749")
             ]
         ),
         hero=ImageComponent(
             url=imageURL,
             size='full',
-            aspect_ratio='20:13',
+            aspect_ratio=imageAspectRatio,
             aspect_mode='cover'
         ),
         body=BoxComponent(
