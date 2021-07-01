@@ -38,6 +38,13 @@ RAKA_SUDEWI_TEXT = "Menurut rektor perempuan pertama di pendidikan ini, hal ters
 
 SEJARAH_FMIPA = "Pada awalnya Fakultas MIPA Udayana disebut Program Studi MIPA yang terbentuk melalui surat Keputusan Rektor Universitas Udayana No. 613/PT.17/I.a.012/1984 pada tanggal 1 Juli 1984."
 
+AKREDITASI_FIS = "Akreditasi BAN-PT Jurusan Fisika FMIPA Universitas Udayana yang diperoleh selalu baik (B)."
+AKREDITASI_KIM = "Akreditasi BAN-PT Jurusan Kimia FMIPA Universitas Udayana dilaksanakan tahun 2001, 2006, dan 2012. Selama tiga kali akreditasi, nilai akreditasi yang diperoleh selalu baik (B)."
+AKREDITASI_BIO = "Akreditasi dari Program Studi Biologi dengan No SK Akreditasi : 025/BAN-PT/Ak-XIV/S1/IX/2011 dengan nilai baik (B)."
+AKREDITASI_MAT = "Jurusan Matematika terakreditasi B dan berlaku selama lima tahun. Akreditasi ini berdasarkan SK BAN-PT nomor 217/SK/BAN-PT/Ak-XVI/S/X/2013."
+AKREDITASI_FARMA = "Berdasarkan Keputusan Badan Akreditasi Nasional Perguruan Tinggi No 383/SK/BAN PT/akred/S/IX/2014 dinyatakan terakreditasi dengan nilai B."
+AKREDITASI_KOM = "Akreditasi BAN-PT Jurusan Informatika FMIPA Universitas Udayana diperoleh selalu baik (B)."
+
 line_bot_api = LineBotApi(YOUR_CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(YOUR_CHANNEL_SECRET)
 
@@ -185,6 +192,44 @@ def handle_message(event):
             "https://dkarmanax.wordpress.com/2013/06/23/mengenal-fmipa-universitas-udayana/")
         container = CarouselContainer(contents=[bubble1])
         message = FlexSendMessage(alt_text="Sejarah Unud", contents=container)
+        line_bot_api.reply_message(
+            event.reply_token,
+            message
+        )
+
+    elif 'akreditasi mipa' in msg:
+        bubble1 = createBubble(
+            "Fakultas Fisika", 
+            "https://pbs.twimg.com/profile_images/378800000108493477/15e18cf46738f7e061951d832d2771fb_400x400.jpeg",
+            AKREDITASI_FIS,
+            "https://www.unud.ac.id/in/prodi82-Fisika.html")
+        bubble2 = createBubble(
+            "Fakultas Kimia", 
+            "https://pbs.twimg.com/profile_images/1218403600897998848/LrMOBFNC_400x400.jpg",
+            AKREDITASI_KIM,
+            "https://www.unud.ac.id/in/prodi47-Kimia.html")
+        bubble3 = createBubble(
+            "Fakultas Biologi", 
+            "https://pbs.twimg.com/profile_images/1090447974025486336/RdQazE4S_400x400.jpg",
+            AKREDITASI_BIO,
+            "https://www.unud.ac.id/in/prodi77-Biologi.html")
+        bubble4 = createBubble(
+            "Fakultas Matematika", 
+            "https://pbs.twimg.com/profile_images/598791010345357313/DTg7nXkL.jpg",
+            AKREDITASI_MAT,
+            "https://www.unud.ac.id/in/prodi81-Matematika.html")
+        bubble5 = createBubble(
+            "Fakultas Farmasi", 
+            "https://pbs.twimg.com/profile_images/344513261572834650/c1d8d52b7589005ee3a9549f55815cb4.jpeg",
+            AKREDITASI_FARMA,
+            "https://www.unud.ac.id/in/prodi79-Farmasi.html")
+        bubble6 = createBubble(
+            "Fakultas Informatika", 
+            "https://pbs.twimg.com/profile_images/3661069144/e1f2a6dd7129b5dd2d46584743f29d02_400x400.jpeg",
+            AKREDITASI_KOM,
+            "https://www.unud.ac.id/in/prodi80-Ilmu%20Komputer-Teknik%20Informatika.html")
+        container = CarouselContainer(contents=[bubble1, bubble2, bubble3, bubble4, bubble5, bubble6])
+        message = FlexSendMessage(alt_text="Akreditasi MIPA", contents=container)
         line_bot_api.reply_message(
             event.reply_token,
             message
