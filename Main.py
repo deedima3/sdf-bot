@@ -34,7 +34,11 @@ MARGARANA_TEXT = "adalah sebuah Monumen untuk mengenang Puputan Margarana"
 SANUR_TEXT = "adalah salah satu pantai wisata yang terkenal di pulau Bali"
 BAJRA_TEXT = "adalah monumen perjuangan rakyat Bali yang terletak di Renon"
 
-RAKA_SUDEWI_TEXT = "Menurut rektor perempuan pertama di pendidikan ini, hal tersebut harus dapat memacu untuk menuju World Class University. Kini, universitas telah bekerja sama dengan berbagai lembaga perguruan tinggi internasional, baik dalam bidang pendidikan, penelitian, dan pengabdian masyarakat."
+WATINIASIH_TEXT = "Nama: Ni Luh Watiniasih, M.Sc.,Ph.D. \n "
+GANDHIADI_TEXT = "Nama: Dr. Drs. GK Gandhiadi, M.T. \n"
+SUKADANA_TEXT = "Nama: Dr. Drs. I Made Sukadana, M.Si \n"
+GUNAWAN_TEXT = "Nama: Prof. Dr. I Wayan Gede Gunawan S.Si, M.Si."
+
 
 SEJARAH_FMIPA = "Pada awalnya Fakultas MIPA Udayana disebut Program Studi MIPA yang terbentuk melalui surat Keputusan Rektor Universitas Udayana No. 613/PT.17/I.a.012/1984 pada tanggal 1 Juli 1984."
 
@@ -148,23 +152,29 @@ def handle_message(event):
         
     elif 'jajaran pimpinan' in msg:
         bubble1 = createBubble(
-            "Rektor Udayana", 
-            "https://womensobsession.com/uploads/post_article/20190625232230-28960.jpg",
-            RAKA_SUDEWI_TEXT,
-            "https://www.womensobsession.com/detail/12/prof-dr-dr-aa-raka-sudewi-sps-k-unggul-mandiri-berbudaya")
+            "Dekan FMIPA", 
+            "https://simdos.unud.ac.id/uploads/file_foto_dir/b68c3163efaef4e08ac00b8a3e0e3b8ae1cf5cdb.jpg",
+            WATINIASIH_TEXT,
+            "https://udayananetworking.unud.ac.id/lecturer/2302-ni-luh-watiniasih")
         bubble2 = createBubble(
-            "Predator UNUD",
-            "https://pbs.twimg.com/profile_images/879285590834925568/nv9P5Li9.jpg",
-            "Hati-hati ya anaknya jauhin dari orang ini",
-            "https://twitter.com/dwikurmha"
+            "Wakil Dekan I Bidang Akademik dan Perencanaan",
+            "https://simdos.unud.ac.id/uploads/file_foto_dir/c846fc105e2f2f845a4015fc8edeaa90fd0088db.jpg",
+            GANDHIADI_TEXT,
+            "https://udayananetworking.unud.ac.id/lecturer/2268-gk-gandhiadi"
         )
         bubble3 = createBubble(
-            "Creator",
-            "https://scontent.fdps2-1.fna.fbcdn.net/v/t1.6435-9/123305666_3551265074965550_651878868087206200_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=09cbfe&_nc_eui2=AeF8P0gAOFcUumleXLm2IljNFfxW36CBDQ4V_FbfoIENDt06QVGvjQuLG4gwmjyyOOxDloT6Uz2XUntSWNXeHhRy&_nc_ohc=ZiyN-XPY4UUAX9C2AOW&_nc_ht=scontent.fdps2-1.fna&oh=0e8dcaffed240ab885a24a8686371cde&oe=60E2C39A",
-            "Haloo",
-            "https://www.facebook.com/deedima03"
+            "Wakil Dekan II Bidang Umum dan Keuangan",
+            "https://simdos.unud.ac.id/uploads/file_foto_dir/7b479289d3cc1ab53944113d03763d70.jpg",
+            SUKADANA_TEXT,
+            "https://udayananetworking.unud.ac.id/lecturer/2326-i-made-sukadana"
         )
-        container = CarouselContainer(contents=[bubble1, bubble2, bubble3])
+        bubble4 = createBubble(
+            "Wakil Dekan III Bidang Kemahasiswaan dan Informasi",
+            "https://udayananetworking.unud.ac.id/protected/storage/foto_biografi/foto%203x4.jpg",
+            GUNAWAN_TEXT,
+            "https://udayananetworking.unud.ac.id/professor/credential/2298-i-wayan-gede-gunawan"
+        )
+        container = CarouselContainer(contents=[bubble1, bubble2, bubble3, bubble4])
         message = FlexSendMessage(alt_text="Jajaran Pimpinan", contents=container)
         line_bot_api.reply_message(
             event.reply_token,
