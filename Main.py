@@ -178,7 +178,7 @@ def handle_message(event):
             "https://simdos.unud.ac.id/uploads/file_foto_dir/c846fc105e2f2f845a4015fc8edeaa90fd0088db.jpg",
             GANDHIADI_TEXT,
             "https://udayananetworking.unud.ac.id/lecturer/2268-gk-gandhiadi",
-            "lg",
+            "xl",
             "4:5",
             False
         )
@@ -187,7 +187,7 @@ def handle_message(event):
             "https://simdos.unud.ac.id/uploads/file_foto_dir/7b479289d3cc1ab53944113d03763d70.jpg",
             SUKADANA_TEXT,
             "https://udayananetworking.unud.ac.id/lecturer/2326-i-made-sukadana",
-            "lg",
+            "xl",
             "4:5",
             False
         )
@@ -196,7 +196,7 @@ def handle_message(event):
             "https://udayananetworking.unud.ac.id/protected/storage/foto_biografi/foto%203x4.jpg",
             GUNAWAN_TEXT,
             "https://udayananetworking.unud.ac.id/professor/credential/2298-i-wayan-gede-gunawan",
-            "lg",
+            "xl",
             "4:5",
             False
         )
