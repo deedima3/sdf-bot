@@ -171,8 +171,8 @@ def handle_message(event):
         )
     elif 'peta' in msg:
         image_message = ImageSendMessage(
-            original_content_url='http://i5.wikimapia.org/?x=13433&y=8593&zoom=14&type=map&lng=0',
-            preview_image_url='http://i5.wikimapia.org/?x=13433&y=8593&zoom=14&type=map&lng=0'
+            original_content_url='https://i5.wikimapia.org/?x=13433&y=8593&zoom=14&type=map&lng=0',
+            preview_image_url='https://i5.wikimapia.org/?x=13433&y=8593&zoom=14&type=map&lng=0'
         )
         line_bot_api.reply_message(event.reply_token, image_message)
 
