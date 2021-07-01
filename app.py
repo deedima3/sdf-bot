@@ -41,6 +41,13 @@ def handle_message(event):
         event.reply_token,
         TextSendMessage(text=event.message.text))
 
+    msg = (event.message.text).lower()
+
+    if 'peta' in msg:
+        image_message = ImageSendMessage(
+            original_content_url='http://i5.wikimapia.org/?x=13433&y=8593&zoom=14&type=map&lng=0',
+            preview_image_url='http://i5.wikimapia.org/?x=13433&y=8593&zoom=14&type=map&lng=0'
+        )
 
 if __name__ == "__main__":
     app.run()
