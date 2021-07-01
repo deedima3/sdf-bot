@@ -172,30 +172,18 @@ def handle_message(event):
         )
     elif 'peta' in msg:
         image_message = ImageSendMessage(
-            original_content_url='http://i5.wikimapia.org/?x=13433&y=8593&zoom=14&type=map&lng=0',
-            preview_image_url='http://i5.wikimapia.org/?x=13433&y=8593&zoom=14&type=map&lng=0'
+            original_content_url='https://i5.wikimapia.org/?x=13433&y=8593&zoom=14&type=map&lng=0',
+            preview_image_url='https://i5.wikimapia.org/?x=13433&y=8593&zoom=14&type=map&lng=0'
         )
         line_bot_api.reply_message(event.reply_token, image_message)
     
-    elif 'sejarah unud' in msg:
+    elif 'sejarah mipa' in msg:
         bubble1 = createBubble(
             "Sejarah FMIPA Unud", 
             "https://dkarmanax.files.wordpress.com/2013/06/img00175-20111231-0830.jpg?w=650",
             SEJARAH_FMIPA,
             "https://dkarmanax.wordpress.com/2013/06/23/mengenal-fmipa-universitas-udayana/")
-        bubble2 = createBubble(
-            "Predator UNUD",
-            "https://pbs.twimg.com/profile_images/879285590834925568/nv9P5Li9.jpg",
-            "Hati-hati ya anaknya jauhin dari orang ini",
-            "https://twitter.com/dwikurmha"
-        )
-        bubble3 = createBubble(
-            "Creator",
-            "https://scontent.fdps2-1.fna.fbcdn.net/v/t1.6435-9/123305666_3551265074965550_651878868087206200_n.jpg?_nc_cat=110&ccb=1-3&_nc_sid=09cbfe&_nc_eui2=AeF8P0gAOFcUumleXLm2IljNFfxW36CBDQ4V_FbfoIENDt06QVGvjQuLG4gwmjyyOOxDloT6Uz2XUntSWNXeHhRy&_nc_ohc=ZiyN-XPY4UUAX9C2AOW&_nc_ht=scontent.fdps2-1.fna&oh=0e8dcaffed240ab885a24a8686371cde&oe=60E2C39A",
-            "Haloo",
-            "https://www.facebook.com/deedima03"
-        )
-        container = CarouselContainer(contents=[bubble1, bubble2, bubble3])
+        container = CarouselContainer(contents=[bubble1])
         message = FlexSendMessage(alt_text="Sejarah Unud", contents=container)
         line_bot_api.reply_message(
             event.reply_token,
