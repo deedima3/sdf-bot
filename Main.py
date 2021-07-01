@@ -79,7 +79,7 @@ def createBubble(title, imageURL, text, actionURL="0", titleSize="xl", imageAspe
             layout="vertical",
             contents=[
                 TextComponent(text=title, weight='bold',
-                              size=titleSize, align="center", color="#291749")
+                              size=titleSize, align="center", color="#291749", wrap=True)
             ]
         ),
         hero=ImageComponent(
@@ -170,34 +170,34 @@ def handle_message(event):
             WATINIASIH_TEXT,
             "https://udayananetworking.unud.ac.id/lecturer/2302-ni-luh-watiniasih",
             "xl",
-            "3:4",
+            "9:10",
             False
         )
         bubble2 = createBubble(
-            "Wakil Dekan I Bidang Akademik dan Perencanaan",
+            "Wakil Dekan I\n Bidang Akademik dan Perencanaan",
             "https://simdos.unud.ac.id/uploads/file_foto_dir/c846fc105e2f2f845a4015fc8edeaa90fd0088db.jpg",
             GANDHIADI_TEXT,
             "https://udayananetworking.unud.ac.id/lecturer/2268-gk-gandhiadi",
             "md",
-            "3:4",
+            "9:10",
             False
         )
         bubble3 = createBubble(
-            "Wakil Dekan II Bidang Umum dan Keuangan",
+            "Wakil Dekan II\n Bidang Umum dan Keuangan",
             "https://simdos.unud.ac.id/uploads/file_foto_dir/7b479289d3cc1ab53944113d03763d70.jpg",
             SUKADANA_TEXT,
             "https://udayananetworking.unud.ac.id/lecturer/2326-i-made-sukadana",
             "md",
-            "3:4",
+            "9:10",
             False
         )
         bubble4 = createBubble(
-            "Wakil Dekan III Bidang Kemahasiswaan dan Informasi",
+            "Wakil Dekan III\n Bidang Kemahasiswaan dan Informasi",
             "https://udayananetworking.unud.ac.id/protected/storage/foto_biografi/foto%203x4.jpg",
             GUNAWAN_TEXT,
             "https://udayananetworking.unud.ac.id/professor/credential/2298-i-wayan-gede-gunawan",
             "md",
-            "3:4",
+            "9:10",
             False
         )
         container = CarouselContainer(contents=[bubble1, bubble2, bubble3, bubble4])
