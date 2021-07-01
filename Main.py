@@ -55,7 +55,24 @@ handler = WebhookHandler(YOUR_CHANNEL_SECRET)
 #Utitlitiy Function
 
 
-def createBubble(title, imageURL, text, actionURL, titleSize="xl", imageAspectRatio="20:13"):
+def createBubble(title, imageURL, text, actionURL="0", titleSize="xl", imageAspectRatio="20:13", button=True):
+    if button:
+        footerTemp = BoxComponent(
+            layout='vertical',
+            spacing='sm',
+            contents=[
+                    # callAction
+                    ButtonComponent(
+                        style='primary',
+                        height='sm',
+                        action=URIAction(label='Selengkapnya',
+                                         uri=actionURL),
+                        color="#291749"
+                    )]
+        )
+    else:
+        footerTemp = None
+
     bubble = BubbleContainer(
         direction='ltr',
         header=BoxComponent(
@@ -78,19 +95,7 @@ def createBubble(title, imageURL, text, actionURL, titleSize="xl", imageAspectRa
                 TextComponent(text=text, size='sm',
                               align="start", color="#000000", wrap=True)
             ]),
-        footer=BoxComponent(
-            layout='vertical',
-            spacing='sm',
-            contents=[
-                    # callAction
-                    ButtonComponent(
-                        style='primary',
-                        height='sm',
-                        action=URIAction(label='Selengkapnya',
-                                         uri=actionURL),
-                        color="#291749"
-                    )]
-        )
+        footer=footerTemp
     )
     return bubble
 
@@ -165,14 +170,17 @@ def handle_message(event):
             WATINIASIH_TEXT,
             "https://udayananetworking.unud.ac.id/lecturer/2302-ni-luh-watiniasih",
             "xl",
-            "3:4")
+            "3:4",
+            False
+        )
         bubble2 = createBubble(
             "Wakil Dekan I Bidang Akademik dan Perencanaan",
             "https://simdos.unud.ac.id/uploads/file_foto_dir/c846fc105e2f2f845a4015fc8edeaa90fd0088db.jpg",
             GANDHIADI_TEXT,
             "https://udayananetworking.unud.ac.id/lecturer/2268-gk-gandhiadi",
             "md",
-            "3:4"
+            "3:4",
+            False
         )
         bubble3 = createBubble(
             "Wakil Dekan II Bidang Umum dan Keuangan",
@@ -180,7 +188,8 @@ def handle_message(event):
             SUKADANA_TEXT,
             "https://udayananetworking.unud.ac.id/lecturer/2326-i-made-sukadana",
             "md",
-            "3:4"
+            "3:4",
+            False
         )
         bubble4 = createBubble(
             "Wakil Dekan III Bidang Kemahasiswaan dan Informasi",
@@ -188,7 +197,8 @@ def handle_message(event):
             GUNAWAN_TEXT,
             "https://udayananetworking.unud.ac.id/professor/credential/2298-i-wayan-gede-gunawan",
             "md",
-            "3:4"
+            "3:4",
+            False
         )
         container = CarouselContainer(contents=[bubble1, bubble2, bubble3, bubble4])
         message = FlexSendMessage(alt_text="Jajaran Pimpinan", contents=container)
