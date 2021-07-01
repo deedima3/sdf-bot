@@ -118,7 +118,7 @@ def handle_message(event):
                 layout='vertical',
                 contents=[
                     # info
-                    TextComponent(text=RAKA_SUDEWI_TEXT, size='md', align="start", color="#000000", max_lines="0")
+                    TextComponent(text=RAKA_SUDEWI_TEXT, size='md', align="start", color="#000000")
                 ]),
             footer=BoxComponent(
                 layout='vertical',
