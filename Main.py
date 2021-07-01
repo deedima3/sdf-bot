@@ -146,6 +146,13 @@ def handle_message(event):
             event.reply_token,
             message
         )
+    elif 'peta' in msg:
+        image_message = ImageSendMessage(
+            original_content_url='http://i5.wikimapia.org/?x=13433&y=8593&zoom=14&type=map&lng=0',
+            preview_image_url='http://i5.wikimapia.org/?x=13433&y=8593&zoom=14&type=map&lng=0'
+        )
+        line_bot_api.reply_message(event.reply_token, image_message)
+        
 if __name__ == "__main__":
     #    app.run()
     port = int(os.getenv("PORT", 5000))
