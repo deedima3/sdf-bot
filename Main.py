@@ -177,7 +177,7 @@ def handle_message(event):
         )
         line_bot_api.reply_message(event.reply_token, image_message)
     
-    elif 'Sejarah Unud' in msg:
+    elif 'sejarah unud' in msg:
         bubble1 = createBubble(
             "Sejarah FMIPA Unud", 
             "https://dkarmanax.files.wordpress.com/2013/06/img00175-20111231-0830.jpg?w=650",
