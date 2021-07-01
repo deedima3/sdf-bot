@@ -101,9 +101,11 @@ def handle_message(event):
         template_message = TemplateSendMessage(
             alt_text='Landmark Pulau Bali', template=carousel_template)
         line_bot_api.reply_message(event.reply_token, template_message)
+        
     elif 'jajaran pimpinan' in msg:
         bubble = BubbleContainer(
             direction='ltr',
+            header=TextComponent(text='Rektor Udayana', weight='bold', size='xl', align="center", color=""),
             hero=ImageComponent(
                 url='https://example.com/cafe.jpg',
                 size='full',
