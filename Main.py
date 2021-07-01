@@ -55,7 +55,7 @@ handler = WebhookHandler(YOUR_CHANNEL_SECRET)
 #Utitlitiy Function
 
 
-def createBubble(title, imageURL, text, actionURL="0", titleSize="xl", imageAspectRatio="20:13", button=True):
+def createBubble(title, imageURL, text, actionURL="0", titleSize="xl", imageAspectRatio="20:13", button=True, textAllignment="start"):
     if button:
         footerTemp = BoxComponent(
             layout='vertical',
@@ -93,7 +93,7 @@ def createBubble(title, imageURL, text, actionURL="0", titleSize="xl", imageAspe
             contents=[
                 # info
                 TextComponent(text=text, size='sm',
-                              align="start", color="#000000", wrap=True)
+                              align=textAllignment, color="#000000", wrap=True)
             ]),
         footer=footerTemp
     )
