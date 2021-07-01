@@ -174,7 +174,7 @@ def handle_message(event):
             False
         )
         bubble2 = createBubble(
-            "Wakil Dekan I,
+            "Wakil Dekan I",
             "https://simdos.unud.ac.id/uploads/file_foto_dir/c846fc105e2f2f845a4015fc8edeaa90fd0088db.jpg",
             GANDHIADI_TEXT,
             "https://udayananetworking.unud.ac.id/lecturer/2268-gk-gandhiadi",
