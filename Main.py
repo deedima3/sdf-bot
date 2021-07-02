@@ -149,7 +149,7 @@ def handle_message(event):
             textAllignment="center"
         )
         bubble2 = createBubble(
-            "Taman Makam Pahlawan Margarana",
+            "Taman Margarana",
             "https://upload.wikimedia.org/wikipedia/id/d/db/Candi_Margarana.jpeg",
             MARGARANA_TEXT,
             "https://id.wikipedia.org/wiki/Taman_Pujaan_Bangsa_Margarana",
