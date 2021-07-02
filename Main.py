@@ -29,10 +29,10 @@ app = Flask(__name__)
 YOUR_CHANNEL_ACCESS_TOKEN = os.environ["YOUR_CHANNEL_ACCESS_TOKEN"]
 YOUR_CHANNEL_SECRET = os.environ["YOUR_CHANNEL_SECRET"]
 
-GWK_TEXT = "adalah sebuah taman wisata budaya di selatan pulau Bali"
-MARGARANA_TEXT = "adalah sebuah Monumen untuk mengenang Puputan Margarana"
-SANUR_TEXT = "adalah salah satu pantai wisata yang terkenal di pulau Bali"
-BAJRA_TEXT = "adalah monumen perjuangan rakyat Bali yang terletak di Renon"
+GWK_TEXT = "Taman Budaya Garuda Wisnu Kencana (bahasa Inggris: Garuda Wisnu Kencana Cultural Park), atau kerap disebut dengan GWK, adalah sebuah taman wisata budaya di bagian selatan pulau Bali. Taman wisata ini terletak di Desa Ungasan, Kecamatan Kuta Selatan, Kabupaten Badung, kira-kira 40 kilometer di sebelah selatan Denpasar, ibu kota provinsi Bali."
+MARGARANA_TEXT = "Monumen Nasional Taman Pujaan Bangsa Margarana adalah sebuah Monumen peringatan yang didirikan untuk mengenang tragedi Puputan Margarana, di Desa Marga, Kecamatan Marga, Kabupaten Tabanan, Bali."
+SANUR_TEXT = "Pantai Sanur adalah salah satu pantai wisata yang terkenal di pulau Bali. Tempat ini letaknya adalah persis di sebelah timur kota Denpasar, ibu kota Bali. Sanur berada di Kotamadya Denpasar. "
+BAJRA_TEXT = "Monumen Bajra Sandhi atau disebut juga Monumen Perjuangan Rakyat Bali adalah monumen perjuangan rakyat Bali yang terletak di Renon, Kota Denpasar, Bali. Monumen ini menempati areal yang sangat luas, ada beberapa lapangan bola di sekelilingnya. "
 
 WATINIASIH_TEXT = "Nama: Ni Luh Watiniasih, M.Sc.,Ph.D. \n "
 GANDHIADI_TEXT = "Nama: Dr. Drs. GK Gandhiadi, M.T. \n"
@@ -141,28 +141,46 @@ def handle_message(event):
     
     # Submenu
     elif 'landmark bali' in msg:
-        carousel_template = CarouselTemplate(columns=[
-            CarouselColumn(text=GWK_TEXT, title='Garuda Wisnu Kencana', thumbnail_image_url="https://www.rentalmobilbali.net/wp-content/uploads/2020/03/Tempat-Wisata-Di-Bali-GWK.jpg", actions=[
-                URIAction(label='Selengkapnya',
-                          uri='https://id.wikipedia.org/wiki/Taman_Budaya_Garuda_Wisnu_Kencana')
-            ]),
-            CarouselColumn(text=MARGARANA_TEXT, title='Taman Makam Pahlawan Margarana', thumbnail_image_url="https://upload.wikimedia.org/wikipedia/id/d/db/Candi_Margarana.jpeg", actions=[
-                URIAction(label='Selengkapnya',
-                          uri='https://id.wikipedia.org/wiki/Taman_Pujaan_Bangsa_Margarana')
-            ]),
-            CarouselColumn(text=SANUR_TEXT, title='Pantai Sanur', thumbnail_image_url="https://www.indonesia.travel/content/dam/indtravelrevamp/en/destinations/bali-nusa-tenggara/sanurbeach_2.jpg", actions=[
-                URIAction(label='Selengkapnya',
-                          uri='https://id.wikipedia.org/wiki/Pantai_Sanur')
-            ]),
-            CarouselColumn(text=BAJRA_TEXT, title='Bajra Sandhi', thumbnail_image_url="https://2.bp.blogspot.com/-xjdOb22GTNc/VX_SZvEoEII/AAAAAAAABaA/ZA0J-LatwlY/s1600/Monumen%2BBajra%2BSandhi%2BBali%2B%252810%2529.jpg", actions=[
-                URIAction(label='Selengkapnya',
-                          uri='https://id.wikipedia.org/wiki/Monumen_Bajra_Sandhi')
-            ]),
-        ])
-        template_message = TemplateSendMessage(
-            alt_text='Landmark Pulau Bali', template=carousel_template)
-        line_bot_api.reply_message(event.reply_token, template_message)
-        
+        bubble1 = createBubble(
+            "Garuda Wisnu Kencana",
+            "https://www.rentalmobilbali.net/wp-content/uploads/2020/03/Tempat-Wisata-Di-Bali-GWK.jpg",
+            GWK_TEXT,
+            "https://id.wikipedia.org/wiki/Taman_Budaya_Garuda_Wisnu_Kencana",
+            "xl",
+            textAllignment="center"
+        )
+        bubble2 = createBubble(
+            "Taman Makam Pahlawan Margarana",
+            "https://upload.wikimedia.org/wikipedia/id/d/db/Candi_Margarana.jpeg",
+            MARGARANA_TEXT,
+            "https://id.wikipedia.org/wiki/Taman_Pujaan_Bangsa_Margarana",
+            "xl",
+            textAllignment="center"
+        )
+        bubble3 = createBubble(
+            "Pantai Sanur",
+            "ttps://www.indonesia.travel/content/dam/indtravelrevamp/en/destinations/bali-nusa-tenggara/sanurbeach_2.jpg",
+            SANUR_TEXT,
+            "https://id.wikipedia.org/wiki/Pantai_Sanur",
+            "xl",
+            textAllignment="center"
+        )
+        bubble4 = createBubble(
+            "Bajra Sandhi",
+            "https://2.bp.blogspot.com/-xjdOb22GTNc/VX_SZvEoEII/AAAAAAAABaA/ZA0J-LatwlY/s1600/Monumen%2BBajra%2BSandhi%2BBali%2B%252810%2529.jpg",
+            BAJRA_TEXT,
+            "https://id.wikipedia.org/wiki/Monumen_Bajra_Sandhi",
+            "xl",
+            textAllignment="center"
+        )
+        container = CarouselContainer(
+            contents=[bubble1, bubble2, bubble3, bubble4])
+        message = FlexSendMessage(
+            alt_text="Landmark Bali", contents=container)
+        line_bot_api.reply_message(
+            event.reply_token,
+            message
+        )
     elif 'jajaran pimpinan' in msg:
         bubble1 = createBubble(
             "Dekan FMIPA", 
