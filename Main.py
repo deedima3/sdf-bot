@@ -146,7 +146,6 @@ def handle_message(event):
             "https://www.rentalmobilbali.net/wp-content/uploads/2020/03/Tempat-Wisata-Di-Bali-GWK.jpg",
             GWK_TEXT,
             "https://id.wikipedia.org/wiki/Taman_Budaya_Garuda_Wisnu_Kencana",
-            "xl",
             textAllignment="center"
         )
         bubble2 = createBubble(
@@ -154,7 +153,6 @@ def handle_message(event):
             "https://upload.wikimedia.org/wikipedia/id/d/db/Candi_Margarana.jpeg",
             MARGARANA_TEXT,
             "https://id.wikipedia.org/wiki/Taman_Pujaan_Bangsa_Margarana",
-            "xl",
             textAllignment="center"
         )
         bubble3 = createBubble(
@@ -162,7 +160,6 @@ def handle_message(event):
             "ttps://www.indonesia.travel/content/dam/indtravelrevamp/en/destinations/bali-nusa-tenggara/sanurbeach_2.jpg",
             SANUR_TEXT,
             "https://id.wikipedia.org/wiki/Pantai_Sanur",
-            "xl",
             textAllignment="center"
         )
         bubble4 = createBubble(
@@ -170,7 +167,6 @@ def handle_message(event):
             "https://2.bp.blogspot.com/-xjdOb22GTNc/VX_SZvEoEII/AAAAAAAABaA/ZA0J-LatwlY/s1600/Monumen%2BBajra%2BSandhi%2BBali%2B%252810%2529.jpg",
             BAJRA_TEXT,
             "https://id.wikipedia.org/wiki/Monumen_Bajra_Sandhi",
-            "xl",
             textAllignment="center"
         )
         container = CarouselContainer(
