@@ -157,7 +157,7 @@ def handle_message(event):
         )
         bubble3 = createBubble(
             "Pantai Sanur",
-            "ttps://www.indonesia.travel/content/dam/indtravelrevamp/en/destinations/bali-nusa-tenggara/sanurbeach_2.jpg",
+            "https://www.indonesia.travel/content/dam/indtravelrevamp/en/destinations/bali-nusa-tenggara/sanurbeach_2.jpg",
             SANUR_TEXT,
             "https://id.wikipedia.org/wiki/Pantai_Sanur",
             textAllignment="center"
